@@ -1,0 +1,122 @@
+{
+  "name": "ferzcli-vscode",
+  "displayName": "ferzcli AI Assistant",
+  "description": "Powerful AI-powered coding assistant for VS Code",
+  "version": "1.0.0",
+  "publisher": "ferzcli",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:ferzcli.analyzeCode",
+    "onCommand:ferzcli.generateCode",
+    "onCommand:ferzcli.optimizeCode",
+    "onCommand:ferzcli.superAgent"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ferzcli.analyzeCode",
+        "title": "🔍 Analyze Code with ferzcli"
+      },
+      {
+        "command": "ferzcli.generateCode",
+        "title": "⚡ Generate Code with ferzcli"
+      },
+      {
+        "command": "ferzcli.optimizeCode",
+        "title": "🚀 Optimize Code with ferzcli"
+      },
+      {
+        "command": "ferzcli.superAgent",
+        "title": "🤖 Super Agent Mode"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "ferzcli.analyzeCode",
+          "when": "editorHasSelection",
+          "group": "ferzcli@1"
+        },
+        {
+          "command": "ferzcli.generateCode",
+          "when": "editorHasSelection",
+          "group": "ferzcli@2"
+        },
+        {
+          "command": "ferzcli.optimizeCode",
+          "group": "ferzcli@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "ferzcli.superAgent",
+          "group": "ferzcli@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "ferzcli.analyzeCode",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "ferzcli.superAgent",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
+      }
+    ],
+    "configuration": {
+      "title": "ferzcli",
+      "properties": {
+        "ferzcli.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "ferzcli API Key for AI services"
+        },
+        "ferzcli.autoAnalyze": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically analyze code on save"
+        },
+        "ferzcli.codeStyle": {
+          "type": "string",
+          "enum": ["psr", "camelCase", "snake_case"],
+          "default": "psr",
+          "description": "Preferred code style"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.2.3"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  }
+}

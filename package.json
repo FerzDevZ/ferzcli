@@ -1,0 +1,69 @@
+{
+  "name": "ferzcli",
+  "version": "1.0.0",
+  "description": "Powerful AI-powered coding assistant CLI with advanced autocomplete and planning capabilities",
+  "main": "dist/obfuscated/src/index.js",
+  "bin": {
+    "ferzcli": "dist/obfuscated/src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "commit": "node src/index.js commit",
+    "agent": "node src/index.js agent",
+    "build": "node scripts/build.js",
+    "pkg": "pkg .",
+    "install-cli": "npm link"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "coding",
+    "assistant",
+    "autocomplete",
+    "groq",
+    "planning"
+  ],
+  "author": {
+    "name": "FerzDevZ",
+    "url": "https://github.com/FerzDevZ"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FerzDevZ/ferzcli.git"
+  },
+  "license": "MIT",
+  "pkg": {
+    "assets": [
+      "lib/**/*",
+      "src/**/*"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-win-x64",
+      "node18-macos-x64"
+    ],
+    "outputPath": "dist/bin"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cli-table3": "^0.6.3",
+    "commander": "^12.0.0",
+    "conf": "^12.0.0",
+    "dotenv": "^16.3.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "groq-sdk": "^0.5.0",
+    "inquirer": "^9.2.15",
+    "mime-types": "^2.1.35",
+    "openai": "^4.28.0",
+    "ora": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^5.1.0",
+    "pkg": "^5.8.1"
+  }
+}

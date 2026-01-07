@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Config & Secrets
+.env
+api.key
+.ferzcli/
+config.json
+
+# Build Outputs (Binaries should be in Releases, not Git)
+dist/
+bin/
+*.exe
+
+# Backups & Simples
+*.backup
+*.simple
+
+# OS files
+.DS_Store
+Thumbs.db

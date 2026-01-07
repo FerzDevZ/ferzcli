@@ -1,0 +1,15 @@
+# Source code and development files
+src/
+lib/
+scripts/
+tests/
+.env
+.gitignore
+.ferzcli/
+brain/
+dist/source
+
+# Keep only obfuscated code and binaries for distribution if needed
+!dist/obfuscated/src
+!dist/obfuscated/lib
+!dist/bin

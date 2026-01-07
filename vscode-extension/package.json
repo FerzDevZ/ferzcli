@@ -1,0 +1,237 @@
+{
+  "name": "ferzcli-vscode",
+  "displayName": "ferzcli AI Assistant",
+  "description": "Powerful AI coding assistant for Laravel, React, and modern web development",
+  "version": "1.0.0",
+  "publisher": "ferzcli",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "laravel",
+    "php",
+    "react",
+    "ai",
+    "coding-assistant",
+    "development-tools",
+    "automation"
+  ],
+  "activationEvents": [
+    "onCommand:ferzcli.helloWorld",
+    "onCommand:ferzcli.superAgent",
+    "onCommand:ferzcli.generateCode",
+    "onCommand:ferzcli.analyzeCode",
+    "onCommand:ferzcli.optimizeCode",
+    "onCommand:ferzcli.deployProject",
+    "onCommand:ferzcli.testProject"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ferzcli.helloWorld",
+        "title": "ferzcli: Hello World"
+      },
+      {
+        "command": "ferzcli.superAgent",
+        "title": "🤖 Super Agent Mode - AI Code Generation"
+      },
+      {
+        "command": "ferzcli.generateCode",
+        "title": "🚀 Generate Code with AI"
+      },
+      {
+        "command": "ferzcli.analyzeCode",
+        "title": "🔍 Analyze Current File"
+      },
+      {
+        "command": "ferzcli.optimizeCode",
+        "title": "⚡ Optimize Code Performance"
+      },
+      {
+        "command": "ferzcli.deployProject",
+        "title": "☁️ Deploy Project"
+      },
+      {
+        "command": "ferzcli.testProject",
+        "title": "🧪 Run Tests"
+      },
+      {
+        "command": "ferzcli.codeReview",
+        "title": "📝 Code Review"
+      },
+      {
+        "command": "ferzcli.databaseTools",
+        "title": "🗄️ Database Tools"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "ferzcli.analyzeCode",
+          "when": "resourceExtname =~ /\\.(js|ts|php|py|java|cpp)$/",
+          "group": "ferzcli@1"
+        },
+        {
+          "command": "ferzcli.optimizeCode",
+          "when": "resourceExtname =~ /\\.(js|ts|php)$/",
+          "group": "ferzcli@2"
+        },
+        {
+          "command": "ferzcli.codeReview",
+          "when": "resourceExtname =~ /\\.(js|ts|php|py)$/",
+          "group": "ferzcli@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "ferzcli.deployProject",
+          "when": "explorerResourceIsFolder",
+          "group": "ferzcli@1"
+        },
+        {
+          "command": "ferzcli.testProject",
+          "when": "explorerResourceIsFolder",
+          "group": "ferzcli@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "ferzcli.superAgent",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "ferzcli.generateCode",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g",
+        "when": "editorTextFocus"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/php.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
+      }
+    ],
+    "configuration": {
+      "title": "ferzcli",
+      "properties": {
+        "ferzcli.ai.endpoint": {
+          "type": "string",
+          "default": "",
+          "description": "AI service endpoint URL"
+        },
+        "ferzcli.ai.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "AI service API key"
+        },
+        "ferzcli.deployment.aws.profile": {
+          "type": "string",
+          "default": "default",
+          "description": "AWS profile for deployment"
+        },
+        "ferzcli.deployment.digitalocean.token": {
+          "type": "string",
+          "default": "",
+          "description": "DigitalOcean API token"
+        },
+        "ferzcli.deployment.vercel.token": {
+          "type": "string",
+          "default": "",
+          "description": "Vercel API token"
+        },
+        "ferzcli.database.default": {
+          "type": "string",
+          "enum": ["mysql", "postgresql", "sqlite", "mongodb"],
+          "default": "mysql",
+          "description": "Default database type"
+        },
+        "ferzcli.codeStyle.php": {
+          "type": "string",
+          "enum": ["psr-12", "psr-4", "symfony"],
+          "default": "psr-12",
+          "description": "PHP code style standard"
+        },
+        "ferzcli.codeStyle.javascript": {
+          "type": "string",
+          "enum": ["standard", "airbnb", "prettier"],
+          "default": "prettier",
+          "description": "JavaScript code style"
+        },
+        "ferzcli.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-save generated files"
+        },
+        "ferzcli.notifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notifications for long-running tasks"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.3"
+  },
+  "dependencies": {
+    "axios": "^1.3.4",
+    "form-data": "^4.0.0",
+    "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferzcli/ferzcli-vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/ferzcli/ferzcli-vscode-extension/issues"
+  },
+  "homepage": "https://ferzcli.dev/vscode-extension",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e40af",
+    "theme": "dark"
+  }
+}
