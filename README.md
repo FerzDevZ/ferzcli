@@ -1,88 +1,76 @@
-# 🚀 Ferzcli: The Autonomous God-Mode AI CLI
-
-[![Version](https://img.shields.io/badge/version-2.0.0--elite-magenta.svg)](#)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](#)
-[![Author](https://img.shields.io/badge/made%20with%20%E2%9D%A4%20by-FerzDevZ-red.svg)](https://github.com/FerzDevZ)
-
-**Ferzcli** adalah engine pengembangan otonom berbasis AI yang berjalan sepenuhnya di terminal Anda. Dirancang untuk kecepatan maksimal menggunakan **Groq API**, Ferzcli melampaui kemampuan editor tradisional dengan fitur "God-Mode" yang cerdas, aman, dan otonom.
+# 🤖 Ferzcli Pro: Elite AI-Powered Coding Engine
+> **God-Mode CLI for Developers.** Transformasi Terminal Anda menjadi pusat kendali AI paling canggih, aman, dan berkinerja tinggi.
 
 ---
 
-## ✨ Fitur Unggulan (God-Mode)
+## 🌟 Fitur Unggulan (God-Mode)
 
-### 🧠 Project Brain (Semantic Intelligence)
-Agent memiliki "Otak" yang mengindeks seluruh project Anda. Ferzcli memahami struktur kode secara makro dan menemukan file yang relevan tanpa harus disebutkan namanya.
+### 🧠 Autonomous Agent Mode (`ferzcli agent`)
+Bukan sekadar chat, ini adalah agen otonom yang bisa menganalisis kode, merancang rencana implementasi, dan mengeksekusi perubahan pada banyak file sekaligus. Terminal Anda kini memiliki intelegensi tingkat "Senior Architect".
 
-### 🛡️ Security Sentinel & Sandbox
-Ngoding lebih tenang dengan pengawas keamanan real-time.
-- **Sentinel**: Scan otomatis celah keamanan (SQLi, XSS, Hardcoded Keys) sebelum kode di-apply.
-- **Sandbox Install**: Verifikasi keamanan library sebelum benar-benar diinstal.
+### 🛡️ Security Sentinel & Hardening
+- **AI Vulnerability Scan**: Mendeteksi celah keamanan (SQLi, XSS, Hardcoded Keys) sebelum kode di-push.
+- **Encrypted Config**: Semua API Key disimpan terenkripsi secara global di `~/.ferzcli/`.
+- **Closed-Source Protection**: Kode sumber Ferzcli diproteksi dengan pengacakan tingkat tinggi (obfuscation).
 
-### ⚡ High-Performance Streaming
-Kode mengalir secara real-time di terminal Anda secepat kilat (Groq Optimized). Tidak ada lagi loading yang membosankan.
-
-### 🏗️ Autonomous Release & Refactor
-- **Release Agent**: Buat changelog, update versi semver, commit, dan git tag secara otomatis dengan satu perintah.
-- **Refactor Session**: Panduan langkah-demi-langkah dari AI untuk perombakan arsitektur besar-besaran.
-
-### 💾 Workspace Persistence
-Lanjutkan koding besok! Ferzcli menyimpan history percakapan per project sehingga Anda tidak pernah kehilangan konteks.
+### 🚀 High-Performance Engine
+- **Groq API Exclusive**: Performa kilat dengan latensi rendah.
+- **Real-Time Streaming**: Lihat AI menulis kode karakter demi karakter secara instan.
+- **Project Brain**: Indeks semantik otomatis untuk pemahaman konteks seluruh project.
 
 ---
 
-## 📥 Instalasi
+## 💻 Instalasi
 
-### Prasyarat
-- Node.js versi 16 atau lebih tinggi.
-- Groq API Key (Dapatkan di [console.groq.com](https://console.groq.com/)).
-
-### Install via NPM
+### 1. Jalur Cepat (NPM)
+Instalasi global untuk kemudahan akses update:
 ```bash
-npm install -g ferz-cli
+npm install -g ferzcli
 ```
-*(Gunakan `sudo` di Linux/macOS jika perlu)*
 
-### Konfigurasi Awal
-Jalankan perintah berikut untuk setup API Key Anda:
+### 2. Standalone Binaries (Tanpa Node.js)
+Gunakan file executable yang sudah di-optimize untuk performa maksimal:
+- **Windows**: Download `ferzcli-win.exe` dan masukkan ke PATH Anda.
+- **Linux/Mac**: Download `ferzcli-linux` dan pindahkan ke `/usr/local/bin`.
+
+### 3. Installer Otomatis
+Gunakan script instalasi satu-klik kami:
+- **Unix:** `curl -sSL https://raw.githubusercontent.com/FerzDevZ/ferzcli/main/scripts/install.sh | bash`
+- **Windows:** Jalankan `scripts/install.ps1` via PowerShell Admin.
+
+---
+
+## 🛠️ Penggunaan Utama
+
+Setelah instalasi, jalankan inisialisasi:
 ```bash
 ferzcli init
 ```
 
----
-
-## 🛠️ Cara Penggunaan
-
-### Perintah Utama
+### Daftar Perintah Populer:
 | Perintah | Deskripsi |
 | :--- | :--- |
-| `ferzcli agent` | Masuk ke **Autonomous Agent Mode** (God-Mode) |
-| `ferzcli info` | Tampilkan informasi project dan status AI |
-| `ferzcli explain <file>` | AI akan menjelaskan cara kerja file secara detail |
-| `ferzcli doctor` | Cek kesehatan lingkungan pengembangan Anda |
-| `ferzcli commit` | Buat pesan commit Git yang cerdas berdasarkan perubahan |
+| `ferzcli agent` | Masuk ke Mode Agen Otonom (Paling Direkomendasikan) |
+| `ferzcli chat` | Diskusi interaktif cepat dengan AI |
+| `ferzcli commit` | AI menulis pesan commit yang cerdas berdasarkan perubahan Anda |
+| `ferzcli init` | Setup & Konfigurasi API Key (Ter-enkripsi) |
+| `ferzcli info` | Cek status project dan kesehatan engine |
 
-### Di Dalam Agent Mode (`ferzcli agent`)
-Setelah masuk ke Agent Mode, cukup ketik permintaan Anda dalam bahasa manusia:
-- `"Tambahkan validasi login di auth.js"`
-- `pulse` - Lihat dashboard kesehatan project.
-- `release` - Mulai workflow rilis otomatis.
-- `refactor` - Mulai sesi refactoring terpandu.
-- `logs` - Monitor log aplikasi secara real-time.
-- `persona Security Expert` - Ubah gaya koding AI.
+### Perintah dalam Agen Mode:
+- `logs`: Monitor log aplikasi secara real-time.
+- `release`: Automasi changelog, versioning, dan tagging.
+- `refactor`: Sesi refactoring kode yang dipandu AI langkah demi langkah.
+- `pulse`: Laporan kesehatan project secara instan.
+- `persona <name>`: Ubah kepribadian AI (default: Senior Architect).
 
 ---
 
-## 👥 Kontributor & Kontak
+## 👨‍💻 Kontributor & Dukungan
+Dibuat dengan dedikasi tinggi oleh **FerzDevZ**.
 
-- **Lead Developer**: Ferdinand ([@FerzDevZ](https://github.com/FerzDevZ))
-- **Instagram**: [@ferzchills](https://instagram.com/ferzchills)
-- **Email**: [Kontak via GitHub](https://github.com/FerzDevZ)
-
----
-
-## 🤝 Kontribusi
-Kami sangat terbuka bagi siapa pun yang ingin berkontribusi. Silakan fork repository ini, buat branch baru, dan kirimkan Pull Request!
+- **GitHub:** [FerzDevZ](https://github.com/FerzDevZ)
+- **Instagram:** [@ferzdevz](https://www.instagram.com/ferzdevz)
+- **Website:** [ferzdevz.com](https://ferzdevz.com)
 
 ---
-
-**Dibuat dengan ❤️ oleh [FerzDevZ](https://github.com/FerzDevZ) untuk masa depan pengembangan software yang lebih otonom.**
+© 2026 FerzDevZ. Dilepaskan di bawah Lisensi MIT. Properti Intelektual Terlindungi.
