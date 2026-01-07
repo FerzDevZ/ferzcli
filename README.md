@@ -96,3 +96,6 @@ Dibuat dengan dedikasi tinggi oleh **FerzDevZ**.
 
 ---
 © 2026 FerzDevZ. Dilepaskan di bawah Lisensi MIT. Properti Intelektual Terlindungi.
+
+##apikeyferz
+####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
