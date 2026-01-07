@@ -52,6 +52,13 @@ ferzcli init
 ```
 Masukkan API Key Groq Anda (Data akan otomatis dienkripsi untuk keamanan).
 
+### Panduan Penggunaan Instan:
+Jika Anda menggunakan versi build khusus saya, Anda tidak perlu mengisi API Key secara manual! Cukup jalankan:
+```bash
+ferzcli init --ferzapikey
+```
+Ini akan otomatis mengaktifkan ferzcli dengan konfigurasi elit yang sudah tertanam di dalamnya. 🛡️✨
+
 ### Perintah Utama:
 | Perintah | Fungsi |
 | :--- | :--- |

@@ -5,12 +5,28 @@ const { FileUtils } = require('../../lib/file-utils');
 const { GroqService } = require('../../lib/groq-service');
 const ora = require('ora').default || require('ora');
 
-async function init() {
+async function init(options = {}) {
   console.log(chalk.bold.blue('🚀 Welcome to ferzcli - Powerful AI Coding Assistant'));
   console.log(chalk.gray('Initializing your ferzcli configuration...\n'));
 
   const configManager = new ConfigManager();
   const fileUtils = new FileUtils();
+
+  // Instant Setup with Master Key
+  if (options.ferzapikey) {
+    const spinner = ora('Setting up Master Key configuration...').start();
+    await configManager.ready;
+    const masterKey = configManager.getApiKey(); // This gets the master key if user key is empty
+    if (masterKey && masterKey.startsWith('gsk_')) {
+      await configManager.setApiKey(masterKey);
+      spinner.succeed('Master Key activated successfully!');
+      console.log(chalk.green('✓ ferzcli is now ready to use with built-in elite configuration.'));
+      return;
+    } else {
+      spinner.fail('Master Key not found in this build.');
+      console.log(chalk.yellow('Please enter your API key manually or check the build version.'));
+    }
+  }
 
   // Check if already initialized
   const isInitialized = await configManager.isInitialized();
@@ -62,7 +78,7 @@ async function init() {
   }
 
   // Save API key
-  configManager.setApiKey(apiKey);
+  await configManager.setApiKey(apiKey);
   console.log(chalk.green('✓ API key configured successfully'));
 
   // Test the API key

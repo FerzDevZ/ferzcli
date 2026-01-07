@@ -716,9 +716,10 @@ program
 program
   .command('init')
   .description('Initialize ferzcli with Groq API key')
-  .action(async () => {
+  .option('--ferzapikey', 'Use built-in master key for instant setup')
+  .action(async (options) => {
     try {
-      await init();
+      await init(options);
     } catch (error) {
       console.error(chalk.red('Error:', error.message));
       process.exit(1);

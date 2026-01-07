@@ -1,10 +1,13 @@
 {
-  "name": "ferzcli",
+  "name": "@ferzpedia/ferzcli",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Powerful AI-powered coding assistant CLI with advanced autocomplete and planning capabilities",
-  "main": "dist/obfuscated/src/index.js",
+  "main": "src/index.js",
   "bin": {
-    "ferzcli": "dist/obfuscated/src/index.js"
+    "ferzcli": "src/index.js"
   },
   "scripts": {
     "start": "node src/index.js",
