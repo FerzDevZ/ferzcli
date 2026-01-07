@@ -1,71 +1,86 @@
 # 🤖 Ferzcli Pro: Elite AI-Powered Coding Engine
-> **God-Mode CLI for Developers.** Transformasi Terminal Anda menjadi pusat kendali AI paling canggih, aman, dan berkinerja tinggi.
+> **Next-Gen CLI for Developers.** Transformasi Terminal Anda menjadi pusat kendali AI paling canggih, aman, dan berkinerja tinggi tanpa ketergantungan pada Node.js.
 
 ---
 
 ## 🌟 Fitur Unggulan (God-Mode)
 
 ### 🧠 Autonomous Agent Mode (`ferzcli agent`)
-Bukan sekadar chat, ini adalah agen otonom yang bisa menganalisis kode, merancang rencana implementasi, dan mengeksekusi perubahan pada banyak file sekaligus. Terminal Anda kini memiliki intelegensi tingkat "Senior Architect".
+Bukan sekadar chat, ini adalah agen otonom yang bisa menganalisis kode, merancang rencana implementasi, dan mengeksekusi perubahan pada banyak file sekaligus secara cerdas.
 
-### 🛡️ Security Sentinel & Hardening
-- **AI Vulnerability Scan**: Mendeteksi celah keamanan (SQLi, XSS, Hardcoded Keys) sebelum kode di-push.
-- **Encrypted Config**: Semua API Key disimpan terenkripsi secara global di `~/.ferzcli/`.
-- **Closed-Source Protection**: Kode sumber Ferzcli diproteksi dengan pengacakan tingkat tinggi (obfuscation).
+### 🛡️ Hardening & Security Elit
+- **Source Protection**: Seluruh logic utama diproteksi dengan obfuscation tingkat tinggi agar aman dari pembajakan.
+- **Encrypted Global Config**: API Key Groq disimpan terenkripsi secara global di direktori user (`~/.ferzcli/`), bukan di folder project.
+- **Security Sentinel**: Pemindaian otomatis terhadap celah keamanan (SQLi, XSS, Keys) sebelum kode diterapkan.
 
 ### 🚀 High-Performance Engine
-- **Groq API Exclusive**: Performa kilat dengan latensi rendah.
-- **Real-Time Streaming**: Lihat AI menulis kode karakter demi karakter secara instan.
-- **Project Brain**: Indeks semantik otomatis untuk pemahaman konteks seluruh project.
+- **Groq API Optimized**: Performa kilat dengan latensi ultra-rendah.
+- **Real-Time Streaming**: Lihat AI menulis kode secara instan, baris demi baris.
+- **Project Brain**: Pemahaman konteks project secara mendalam melalui indexing semantik otomatis.
 
 ---
 
-## 💻 Instalasi
+## 💻 Instalasi & Setup
 
-### 1. Jalur Cepat (NPM)
-Instalasi global untuk kemudahan akses update:
-```bash
-npm install -g ferzcli
-```
+Ferzcli Pro didistribusikan sebagai **Standalone Binary**. Anda tidak perlu menginstal Node.js atau package manager tambahan di perangkat target.
 
-### 2. Standalone Binaries (Tanpa Node.js)
-Gunakan file executable yang sudah di-optimize untuk performa maksimal:
-- **Windows**: Download `ferzcli-win.exe` dan masukkan ke PATH Anda.
-- **Linux/Mac**: Download `ferzcli-linux` dan pindahkan ke `/usr/local/bin`.
+### 1. Instalasi Otomatis (Sangat Direkomendasikan)
+Gunakan installer otomatis kami untuk setup PATH dan konfigurasi instan:
 
-### 3. Installer Otomatis
-Gunakan script instalasi satu-klik kami:
-- **Unix:** `curl -sSL https://raw.githubusercontent.com/FerzDevZ/ferzcli/main/scripts/install.sh | bash`
-- **Windows:** Jalankan `scripts/install.ps1` via PowerShell Admin.
+- **Linux / MacOS (Bash):**
+  ```bash
+  curl -sSL https://raw.githubusercontent.com/FerzDevZ/ferzcli/main/scripts/install.sh | bash
+  ```
+
+- **Windows (PowerShell):**
+  Jalankan script `scripts/install.ps1` dengan hak akses Administrator.
+
+### 2. Instalasi Manual
+Jika Anda lebih suka mengatur sendiri:
+- Unduh binary terbaru dari [GitHub Releases](https://github.com/FerzDevZ/ferzcli/releases).
+- Pindahkan ke folder sistem:
+  - **Linux/Mac**: `/usr/local/bin/ferzcli` (pastikan `chmod +x`).
+  - **Windows**: Tambahkan folder berisi `ferzcli-win.exe` ke Environment Variable `PATH` Anda.
 
 ---
 
-## 🛠️ Penggunaan Utama
+## 🛠️ Panduan Penggunaan
 
-Setelah instalasi, jalankan inisialisasi:
+Setelah terinstal, jalankan perintah ini untuk memulai:
 ```bash
 ferzcli init
 ```
+Masukkan API Key Groq Anda (Data akan otomatis dienkripsi untuk keamanan).
 
-### Daftar Perintah Populer:
-| Perintah | Deskripsi |
+### Perintah Utama:
+| Perintah | Fungsi |
 | :--- | :--- |
-| `ferzcli agent` | Masuk ke Mode Agen Otonom (Paling Direkomendasikan) |
-| `ferzcli chat` | Diskusi interaktif cepat dengan AI |
-| `ferzcli commit` | AI menulis pesan commit yang cerdas berdasarkan perubahan Anda |
-| `ferzcli init` | Setup & Konfigurasi API Key (Ter-enkripsi) |
-| `ferzcli info` | Cek status project dan kesehatan engine |
+| `ferzcli agent` | Masuk ke Mode Agen Otonom (Fitur Utama) |
+| `ferzcli chat` | Diskusi cepat dengan AI di terminal |
+| `ferzcli commit` | AI otomatis membuat pesan commit cerdas berdasarkan diff kode |
+| `ferzcli pulse` | Cek kesehatan project & deteksi tech-debt secara instan |
+| `ferzcli info` | Melihat status sistem dan informasi project |
 
-### Perintah dalam Agen Mode:
-- `logs`: Monitor log aplikasi secara real-time.
-- `release`: Automasi changelog, versioning, dan tagging.
-- `refactor`: Sesi refactoring kode yang dipandu AI langkah demi langkah.
-- `pulse`: Laporan kesehatan project secara instan.
-- `persona <name>`: Ubah kepribadian AI (default: Senior Architect).
+### Fitur di Dalam Agent Mode:
+- **`refactor`**: Panduan langkah demi langkah untuk membersihkan kode.
+- **`release`**: Otomatisasi changelog, tagging, dan versioning.
+- **`logs`**: Monitor log aplikasi tanpa meninggalkan terminal agent.
+- **`persona <name>`**: Sesuaikan gaya bahasa AI (Senior Architect, Bug Hunter, dll).
 
 ---
 
-## 👨‍💻 Kontributor & Dukungan
+## 📦 Untuk Developer: Build & Build Ulang
+Jika Anda memodifikasi source code dan ingin membangun binary baru:
+1. Pastikan dependencies terpasang (`npm install`).
+2. Jalankan perintah build:
+   ```bash
+   npm run build
+   ```
+3. Hasil binary akan muncul di `dist/bin/` dalam versi yang sudah ter-obfuscate.
+
+---
+
+## 👨‍💻 Dukungan
 Dibuat dengan dedikasi tinggi oleh **FerzDevZ**.
 
 - **GitHub:** [FerzDevZ](https://github.com/FerzDevZ)
